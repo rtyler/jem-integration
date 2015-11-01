@@ -2,9 +2,9 @@ apply plugin: 'groovy'
 
 repositories {
 
-    if (System.env.Jenkins.Repository) {
+    if (System.env['Jenkins.Repository']) {
         maven {
-            url System.env.Jenkins.Repository
+            url System.env['Jenkins.Repository']
         }
     }
 
