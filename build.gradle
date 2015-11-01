@@ -1,0 +1,16 @@
+apply plugin: 'groovy'
+
+repositories {
+
+    if (System.env.Jenkins.Repository) {
+        maven {
+            url System.env.Jenkins.Repository
+        }
+    }
+
+    jcenter()
+}
+
+dependencies {
+    compile 'com.github.jruby-gradle:jem:[0.3.0,1.0)'
+}
